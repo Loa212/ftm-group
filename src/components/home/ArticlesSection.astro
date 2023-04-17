@@ -1,8 +1,6 @@
 ---
-import tesseract from "../../assets/newFigures/tesseract.webp";
-import { LogoGithub } from "../../assets/icons";
-import TestimonialCard from "../TestimonialCard.astro";
 import { getCollection } from "astro:content";
+import ArticleCard from "../ArticleCard.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.featured)
@@ -10,13 +8,6 @@ const posts = (await getCollection("blog"))
 ---
 
 <section id="showcase" class="content relative pt-20">
-  <img
-    height="288px"
-    width="327px"
-    class="absolute -left-8 lg:-left-20 -bottom-20 w-32 h-28 lg:w-80 lg:h-72"
-    src={tesseract}
-    alt="tesseract"
-  />
   <div
     class="relative bg-light/5 lg:bg-transparent lg:bg-gradient-to-tr from-teal-500/5 to-teal-700/30 backdrop-blur w-full px-6 py-9"
   >
@@ -35,13 +26,13 @@ const posts = (await getCollection("blog"))
     </svg>
 
     <h2 class="font-bold text-3xl lg:text-4xl">
-      What are our customers saying?
+      This is an article section for the landing page
     </h2>
 
     <div class="grid lg:grid-cols-3 gap-8 lg:gap-16 mt-9 lg:mx-9">
       {
         posts.map((post) => (
-          <TestimonialCard
+          <ArticleCard
             slug={post.slug}
             title={post.data.title}
             image={post.data.heroImage}
