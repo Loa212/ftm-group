@@ -13,40 +13,43 @@ const navLinks = [
 ];
 ---
 
-<!DOCTYPE html>
 <html data-theme="dark" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
   <body>
     <Drawer navLinks={navLinks}>
       <div class="bg-dark text-white">
-        <div class="max-w-5xl mx-4 lg:mx-auto text-sm breadcrumbs mt-4">
-          <ul>
-            <li>
-              <a class="link underline-offset-2 hover:decoration-2" href="/"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="/blog" class="link underline-offset-2 hover:decoration-2"
-                >Blog</a
-              >
-            </li>
-            <li class="text-secondary">{title}</li>
-          </ul>
+        <div class="fixed w-full bg-dark -mt-1 z-10 right-2">
+          <div class="max-w-5xl mx-4 lg:mx-auto text-sm breadcrumbs mt-1">
+            <ul>
+              <li>
+                <a class="link underline-offset-2 hover:decoration-2" href="/"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  class="link underline-offset-2 hover:decoration-2">Blog</a
+                >
+              </li>
+              <li class="text-secondary">{title}</li>
+            </ul>
+          </div>
         </div>
+
         <article
-          class="max-w-5xl mx-4 lg:mx-auto pt-8 prose prose-headings:underline prose-a:text-secondary"
+          class="max-w-5xl overflow-hidden mx-4 lg:mx-auto pt-16 prose prose-headings:underline prose-a:text-secondary"
         >
           {
             heroImage && (
               <img
+                class="max-w-sm"
                 width={720}
                 height={360}
                 src={heroImage}
@@ -60,41 +63,40 @@ const navLinks = [
       </div>
       <Footer />
     </Drawer>
-  </body>
+  </body><style is:global>
+    body {
+      font-family: "Montserrat", sans-serif;
+      @apply bg-dark text-light;
+    }
+
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #0d0d0d #ffffff;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #0d0d0d;
+      border-radius: 0px;
+      border: 0px solid #ffffff;
+    }
+
+    .content {
+      @apply max-w-7xl mx-auto px-2;
+    }
+
+    .btn-default {
+      @apply text-light font-semibold bg-light/20 px-4 py-2;
+    }
+  </style>
 </html>
-<style is:global>
-  body {
-    font-family: "Montserrat", sans-serif;
-    @apply bg-dark text-light;
-  }
-
-  /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #0d0d0d #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #0d0d0d;
-    border-radius: 0px;
-    border: 0px solid #ffffff;
-  }
-
-  .content {
-    @apply max-w-7xl mx-auto px-2;
-  }
-
-  .btn-default {
-    @apply text-light font-semibold bg-light/20 px-4 py-2;
-  }
-</style>
