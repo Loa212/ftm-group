@@ -62,7 +62,9 @@ const { navLinks } = Astro.props;
                 </li>
               ))
             }
-            <button class="btn-default"> Contact us</button>
+            <button class="btn-default ring-1 ring-slate-100/60">
+              Contact us</button
+            >
 
             <!-- <ThemeSwitcher /> -->
           </ul>
@@ -77,7 +79,7 @@ const { navLinks } = Astro.props;
   <div class="drawer-side">
     <label for="drawer-toggle" class="drawer-overlay backdrop-brightness-50"
     ></label>
-    <ul class="menu p-4 w-80 bg-dark text-light">
+    <ul class="menu p-4 w-80 bg-white">
       <!-- Sidebar content here -->
       <li class="flex items-center justify-between">
         <button
@@ -97,9 +99,7 @@ const { navLinks } = Astro.props;
         navLinks.map((link) => (
           <li onclick="document.getElementById('drawer-toggle').checked = false">
             <a
-              class={
-                `text-2xl my-4` + (link.isCurrent ? " text-secondary" : "")
-              }
+              class={`text-2xl my-4` + (link.isCurrent ? " text-dark" : "")}
               href={link.href}
             >
               {link.name}
