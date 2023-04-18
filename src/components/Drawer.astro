@@ -17,16 +17,16 @@ const { navLinks } = Astro.props;
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <div
-      class="sticky inset-y-0 -top-0.5 z-50 w-full navbar bg-dark text-light min-h-[70px]"
+      class="sticky inset-y-0 -top-0.5 z-50 w-full navbar bg-ferrari-500 text-white min-h-[70px]"
     >
       <div
-        class="w-full max-w-7xl mx-auto border-b border-light/20 bg-dark min-h-[72px]"
+        class="w-full max-w-7xl mx-auto border-b border-light/20 min-h-[72px]"
       >
         <a
           href="/"
           class="grow px-2 flex items-center justify-start gap-2 mr-40"
         >
-          <h5 class="text-3xl font-black">Logo here</h5>
+          <h5 class="logo-font">FTM Group</h5>
         </a>
         <div class="flex-none lg:hidden">
           <label for="drawer-toggle" class="btn btn-square btn-ghost">
@@ -52,9 +52,9 @@ const { navLinks } = Astro.props;
               navLinks.map((link) => (
                 <li
                   class={
-                    `font-semibold underline underline-offset-4 decoration-1 text-light  decoration-light ` +
+                    `font-semibold underline underline-offset-4 decoration-1` +
                     (link.isCurrent
-                      ? " text-secondary decoration-secondary"
+                      ? " text-black decoration-black"
                       : " hover:text-white hover:decoration-2 hover:decoration-slate-200")
                   }
                 >
