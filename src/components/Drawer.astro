@@ -1,5 +1,6 @@
 ---
 import { Close } from "../assets/icons";
+import PreNav from "./PreNav.astro";
 
 type Props = {
   navLinks: {
@@ -16,6 +17,7 @@ const { navLinks } = Astro.props;
   <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
+    <PreNav />
     <div
       class="sticky inset-y-0 -top-0.5 z-50 w-full navbar bg-ferrari-500 text-white min-h-[70px]"
     >
@@ -62,7 +64,9 @@ const { navLinks } = Astro.props;
                 </li>
               ))
             }
-            <button class="btn-default ring-1 ring-slate-100/60">
+            <button
+              class="font-semibold underline underline-offset-4 decoration-1 hover:text-white hover:decoration-2"
+            >
               Contact us</button
             >
 

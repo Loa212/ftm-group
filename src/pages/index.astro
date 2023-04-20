@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { ArticlesSection, Hero } from "../components/home/";
+import Hero2 from "../components/home/Hero2.astro";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <div class="h-screen">
-      <Hero />
+      <Hero2 />
       <ArticlesSection />
       <Footer />
     </div>
